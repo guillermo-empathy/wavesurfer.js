@@ -289,6 +289,7 @@ class Renderer extends EventEmitter<RendererEvents> {
 
   destroy() {
     this.subscriptions.forEach((unsubscribe) => unsubscribe())
+    this.audioData = null;
     this.container.remove()
     this.resizeObserver?.disconnect()
     this.unsubscribeOnScroll?.()
